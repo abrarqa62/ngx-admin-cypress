@@ -13,12 +13,18 @@ export class Ecommerce {
 
   PofitCardChart() {
     return cy.get('[data-test-id="Chart_Transaction"]');
+  }
+  ProfitcardBackGraph() {
+    return cy.get('[data-test-id="ProfitBackGraph"]');
+  }
+  // Earning Card
 
-   }
-   ProfitcardBackGraph() {
-    return cy.get('[data-test-id="ProfitBackGraph"]')
+EarningChart()  {
+  return cy.get('[data-test-id="EarningChart"]');
+
 }
 
+  
 }
 
 export const NavigateTo = new Ecommerce();

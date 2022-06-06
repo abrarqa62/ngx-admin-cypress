@@ -1,12 +1,15 @@
 /// <reference types = "cypress" />
 
 import { wrap } from "module";
-import { NavigateTo } from "../../support/page_objects/Ecommerce";
+import { NavigateTo } from "../../support/page_objects/PageObjectsEcommerce";
 
 describe("Ecommerce Page", () => {
   before("Run the Website", () => {
     cy.visit('http://localhost:4200/');
   });
+
+//    Profit card
+context("When user is on profit card", () =>    {
 
   it("User is on Profit Card Section", () => {
     NavigateTo.ProfitCardNavigation();
@@ -51,15 +54,37 @@ it('Click on the flipicon to test the backgrapgh',() => {
     NavigateTo.ProfitCardFlipIcon().click({force: true});
 
     });
-// it ('Test the Backside graph ',() => {
-//     NavigateTo.ProfitcardBackGraph().then($BackCanvas => {
+it ('Test the Backside graph ',() => {
+    NavigateTo.ProfitcardBackGraph().then($BackCanvas => {
 
-//    let v = cy.wrap($BackCanvas)
+   let v = cy.wrap($BackCanvas)
 
+    v.click(5, 130).wait(150);
+    v.click(50, 110).wait(150);
+    v.click(90, 120).wait(150);
+ 
+      });
+  });
+it('Now navigate back to Profit card front',() => {
+  cy.wait(500);
+  NavigateTo.ProfitbackFlipicon().click();
+});
 
-   
-//     });
-// });
+});
     
+// Earning Card
+context('When user now move to Earning Card', () => {
 
+
+ it.only('Test the Daily Income Chart',() => {
+  NavigateTo.EarningChart().then($Earningcanvas => {
+    let E = cy.wrap($Earningcanvas);
+    cy.log($Earningcanvas.width());
+    cy.log($Earningcanvas.height());
+  })
+ 
+});
+
+
+    });
 });
