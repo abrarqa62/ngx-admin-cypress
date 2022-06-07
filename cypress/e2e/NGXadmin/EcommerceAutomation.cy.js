@@ -1,6 +1,3 @@
-/// <reference types = "cypress" />
-
-import { wrap } from "module";
 import { NavigateTo } from "../../support/page_objects/PageObjectsEcommerce";
 
 describe("Ecommerce Page", () => {
@@ -76,7 +73,7 @@ it('Now navigate back to Profit card front',() => {
 context('When user now move to Earning Card', () => {
 
 
- it.only('Test the Daily Income Chart',() => {
+ it('Test the Daily Income Chart',() => {
   NavigateTo.EarningChart().then($Earningcanvas => {
     let E = cy.wrap($Earningcanvas);
     cy.log($Earningcanvas.width());
