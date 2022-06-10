@@ -1,5 +1,6 @@
-<nb-card-body>
-  <ngx-traffic-bar-chart [data]="trafficBarData.data"
+<nb-card-body >
+  <ngx-traffic-bar-chart data-test-id="TrafficBarChart"
+                        [data]="trafficBarData.data"
                          [labels]="trafficBarData.labels"
                          [formatter]="trafficBarData.formatter">
   </ngx-traffic-bar-chart>
