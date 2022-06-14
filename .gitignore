@@ -15,6 +15,11 @@
 .settings/
 *.sublime-workspace
 
+#screen-recorders
+/cypress/videos
+/cypress/screenshots
+
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json

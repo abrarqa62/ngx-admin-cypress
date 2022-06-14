@@ -1,6 +1,6 @@
 <nb-card-header> 
   <nb-select  data-test-id="EarningDropdownButton"  [selected]="selectedCurrency" (selectedChange)="changeCurrency($event)">
-    <nb-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</nb-option>
+    <nb-option  data-test-id="ListEarningDropdown" *ngFor="let currency of currencies" [value]="currency">{{ currency }}</nb-option>
   </nb-select>
 </nb-card-header>                                 
 <nb-card-body   data-test-id="EarningChart" > 
