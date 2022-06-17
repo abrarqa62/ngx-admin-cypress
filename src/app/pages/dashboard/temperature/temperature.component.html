@@ -1,10 +1,11 @@
 <nb-card size="large">
-  <nb-tabset fullWidth>
+  <nb-tabset   fullWidth>
 
-    <nb-tab tabTitle="Temperature">
+    <nb-tab data-test-id="Temptab" tabTitle="Temperature">
 
       <div class="slider-container">
-        <ngx-temperature-dragger [(value)]="temperature" (power)="temperatureOff = !$event"
+        <ngx-temperature-dragger data-test-id="TempDragger"
+                                [(value)]="temperature" (power)="temperatureOff = !$event"
                                  [min]="temperatureData.min" [max]="temperatureData.max" [disableArcColor]="theme.arcEmpty"
                                  [fillColors]="theme.arcFill" [thumbBg]="theme.thumbBg" [thumbBorderColor]="theme.thumbBorder">
 
@@ -21,24 +22,25 @@
 
       <nb-radio-group [(ngModel)]="temperatureMode" name="temperature-mode">
         <nb-radio value="cool">
-          <i class="nb-snowy-circled"></i>
+          <i data-test-id="Tempsnow" class="nb-snowy-circled"></i>
         </nb-radio>
         <nb-radio value="warm">
-          <i class="nb-sunny-circled"></i>
+          <i data-test-id="Tempsunny" class="nb-sunny-circled"></i>
         </nb-radio>
         <nb-radio value="heat">
-          <i class="nb-flame-circled"></i>
+          <i data-test-id="Tempflame" class="nb-flame-circled"></i>
         </nb-radio>
         <nb-radio value="fan">
-          <i class="nb-loop-circled"></i>
+          <i data-test-id="Temploop" class="nb-loop-circled"></i>
         </nb-radio>
       </nb-radio-group>
     </nb-tab>
 
-    <nb-tab tabTitle="Humidity">
+    <nb-tab data-test-id="Humidtab" tabTitle="Humidity">
 
       <div class="slider-container">
-        <ngx-temperature-dragger [(value)]="humidity" (power)="humidityOff = !$event"
+        <ngx-temperature-dragger  data-test-id="HumidDragger"
+                                [(value)]="humidity" (power)="humidityOff = !$event"
                                  [min]="humidityData.min" [max]="humidityData.max" [disableArcColor]="theme.arcEmpty"
                                  [fillColors]="theme.arcFill" [thumbBg]="theme.thumbBg" [thumbBorderColor]="theme.thumbBorder">
 
@@ -52,16 +54,16 @@
 
       <nb-radio-group [(ngModel)]="humidityMode" name="humidity-mode">
         <nb-radio value="cool">
-          <i class="nb-snowy-circled"></i>
+          <i data-test-id="Humidsnow" class="nb-snowy-circled"></i>
         </nb-radio>
         <nb-radio value="warm">
-          <i class="nb-sunny-circled"></i>
+          <i data-test-id="Humidsunny" class="nb-sunny-circled"></i>
         </nb-radio>
         <nb-radio value="heat">
-          <i class="nb-flame-circled"></i>
+          <i data-test-id="Humidflame" class="nb-flame-circled"></i>
         </nb-radio>
         <nb-radio value="fan">
-          <i class="nb-loop-circled"></i>
+          <i data-test-id="Humidloop" class="nb-loop-circled"></i>
         </nb-radio>
       </nb-radio-group>
     </nb-tab>

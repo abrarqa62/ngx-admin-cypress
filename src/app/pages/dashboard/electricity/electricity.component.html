@@ -37,11 +37,11 @@
         <span>291 <span class="caption">USD</span></span>
       </span>
 
-      <nb-select [(selected)]="type" class="type-select">
-        <nb-option *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
+      <nb-select data-test-id="ElectricDropdown" [(selected)]="type" class="type-select">
+        <nb-option data-test-id="ListElectricDropdown" *ngFor="let t of types" [value]="t">{{ t }}</nb-option>
       </nb-select>
     </nb-card-header>
 
-    <ngx-electricity-chart [data]="chartData"></ngx-electricity-chart>
+    <ngx-electricity-chart data-test-id="ElectricChart" [data]="chartData"></ngx-electricity-chart>
   </nb-card>
 </nb-card>
