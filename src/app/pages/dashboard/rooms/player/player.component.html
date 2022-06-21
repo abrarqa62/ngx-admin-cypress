@@ -1,5 +1,5 @@
-<nb-card>
-  <nb-card-header class="header">My Playlist</nb-card-header>
+<nb-card >
+  <nb-card-header data-test-id="MusicPlayer" class="header">My Playlist</nb-card-header>
 
   <nb-card-body class="body">
     <div class="track-info">
@@ -10,8 +10,8 @@
       </div>
     </div>
 
-    <div class="progress-wrap">
-      <input dir="ltr" type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
+    <div  class="progress-wrap">
+      <input  data-test-id="ControlBar" dir="ltr" type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
              (input)="setProgress(duration.value)" #duration>
       <div class="progress-foreground" [style.width.%]="getProgress()"></div>
     </div>
@@ -23,20 +23,20 @@
 
     <div class="controls">
       <button class="control-button" nbButton ghost size="tiny" (click)="toggleShuffle()" [class.on]="shuffle">
-        <nb-icon icon="shuffle-2-outline" pack="eva"></nb-icon>
+        <nb-icon  data-test-id="shuffle" icon="shuffle-2-outline" pack="eva"></nb-icon>
       </button>
       <button class="control-button" nbButton ghost size="medium" (click)="prev()">
-        <nb-icon class="skip" icon="skip-back-outline" pack="eva"></nb-icon>
+        <nb-icon data-test-id="Backwardsong" class="skip" icon="skip-back-outline" pack="eva"></nb-icon>
       </button>
       <button class="control-button play-button" nbButton ghost size="medium" (click)="playPause()">
-        <nb-icon class="play" [icon]="player.paused ? 'play-circle-outline' : 'pause-circle-outline'" pack="eva">
+        <nb-icon data-test-id="Play|Pause" class="play" [icon]="player.paused ? 'play-circle-outline' : 'pause-circle-outline'" pack="eva">
         </nb-icon>
       </button>
       <button class="control-button skip-forward-button" nbButton ghost size="medium" (click)="next()">
-        <nb-icon class="skip" icon="skip-forward-outline" pack="eva"></nb-icon>
+        <nb-icon data-test-id="Forwardsong" class="skip" icon="skip-forward-outline" pack="eva"></nb-icon>
       </button>
       <button class="control-button" nbButton ghost size="tiny" (click)="toggleLoop()" [class.on]="player.loop">
-        <nb-icon icon="repeat-outline" pack="eva"></nb-icon>
+        <nb-icon data-test-id="Repeatsong" icon="repeat-outline" pack="eva"></nb-icon>
       </button>
     </div>
   </nb-card-body>
@@ -44,15 +44,15 @@
   <nb-card-footer class="footer">
     <div class="volume">
       <button nbButton ghost size="small" (click)="setVolume(0)">
-        <nb-icon class="volume-icon" icon="volume-down-outline" pack="eva"></nb-icon>
+        <nb-icon data-test-id="MuteSong" class="volume-icon" icon="volume-down-outline" pack="eva"></nb-icon>
       </button>
-      <div class="progress-wrap">
-        <input type="range" class="progress" [value]="getVolume()" max="100"
+      <div data-test-id="SongVolumeBar" class="progress-wrap">
+        <input   type="range" class="progress" [value]="getVolume()" max="100"
                (input)="setVolume(volume.value)" #volume>
-        <div class="progress-foreground" [style.width.%]="getVolume()"></div>
+        <div  class="progress-foreground" [style.width.%]="getVolume()"></div>
       </div>
       <button nbButton ghost size="small" (click)="setVolume(100)">
-        <nb-icon class="volume-icon" icon="volume-up-outline" pack="eva"></nb-icon>
+        <nb-icon data-test-id="FullVolSong" class="volume-icon" icon="volume-up-outline" pack="eva"></nb-icon>
       </button>
     </div>
   </nb-card-footer>

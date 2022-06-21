@@ -1,4 +1,5 @@
 export class IotDashboard {
+  
   IotDashboard() {
     cy.visit("/");
     return cy.contains("IoT Dashboard");
@@ -125,18 +126,81 @@ export class IotDashboard {
   SecCamGridView() {
     return cy.get('[data-test-id="Gridview"]');
   }
-  SecurityCameraVeiw1(){
-    return cy.xpath("//span[normalize-space()='Camera #1']")
+  SecurityCameraVeiw1() {
+    return cy.xpath("//span[normalize-space()='Camera #1']");
   }
-  SecurityCameraVeiw2(){
-    return cy.xpath("//span[normalize-space()='Camera #2']")
+  SecurityCameraVeiw2() {
+    return cy.xpath("//span[normalize-space()='Camera #2']");
   }
-  SecurityCameraVeiw3(){
-    return cy.xpath("//span[normalize-space()='Camera #3']")
+  SecurityCameraVeiw3() {
+    return cy.xpath("//span[normalize-space()='Camera #3']");
   }
-  SecurityCameraVeiw4(){
-    return cy.xpath("//span[normalize-space()='Camera #4']")
+  SecurityCameraVeiw4() {
+    return cy.xpath("//span[normalize-space()='Camera #4']");
   }
+
+  //Room Mangement Section
+
+  RoomManagementCard() {
+    return cy.get('[data-test-id="RoomSelector"]');
+  }
+  BedroomSelect() {
+    return cy.xpath(
+      "//*[name()='g' and @id='1']//*[name()='path' and contains(@class,'room-bg')]"
+    );
+  }
+  LivingRoomSelect() {
+    return cy.xpath(
+      "//*[name()='g' and @id='2']//*[name()='path' and contains(@class,'room-bg')]"
+    );
+  }
+  KittenSelect() {
+    return cy.xpath(
+      "//*[name()='g' and @id='0']//*[name()='path' and contains(@class,'room-bg')]"
+    );
+  }
+  HallwaySelect() {
+    return cy.xpath(
+      "//*[name()='g' and @id='3']//*[name()='path' and contains(@class,'room-bg')]"
+    );
+  }
+  // Music Player
+  MyPlaylistCard() {
+    return cy.get('[data-test-id="MusicPlayer"]');
+  }
+  ControlSongBar() {
+    return cy.xpath("//input[@data-test-id='ControlBar']");
+  }
+  PlaySongButton() {
+    return cy.get('[data-test-id="Play|Pause"]');
+  }
+  PauseSongButton() {
+    return cy.get('[data-test-id="Play|Pause"]');
+  }
+  ShuffleSongButton(){
+    return cy.get('[data-test-id="shuffle"]')
+  }
+  ForwardSongButton() {
+    return cy.get('[data-test-id="Forwardsong"]');
+  }
+  BackwardSongButton() {
+    return cy.get('[data-test-id="Backwardsong"]');
+  }
+  RepeatSongButton() {
+    return cy.get('[data-test-id="Backwardsong"]');
+  }
+  MuteVolSongButton() {
+    return cy.get('[data-test-id="MuteSong"]');
+  }
+  FullVolSongButton() {
+    return cy.get('[data-test-id="FullVolSong"]');
+  }
+  VolumeSongBar() {
+    return cy.get('[data-test-id="SongVolumeBar"]');
+  }
+
+
+
 }
 
 export const ToNavigateIoT = new IotDashboard();
