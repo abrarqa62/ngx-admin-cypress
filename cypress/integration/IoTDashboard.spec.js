@@ -2,36 +2,39 @@ import { ToNavigateIoT } from "../page_objects/PageObjectIoTdashboard";
 
 describe("Iot Dashboad", () => {
   before("User move to IoT Dashboard", () => {
-    ToNavigateIoT.IotDashboard().click();
+    ToNavigateIoT.IotDashboard().should("be.visible").click();
+    cy.url().should("include", "/iot-dashboard");
   });
   context("When user is on Status Card", () => {
     it("Verify if user can click on Light Icon to OFF light", () => {
       ToNavigateIoT.LightBulb().click();
+      ToNavigateIoT.offBulb().should("contain", "OFF");
     });
     it("Verify if user can click on Light Icon to ON light", () => {
-      ToNavigateIoT.LightBulb().click();
+      ToNavigateIoT.LightBulb().should("be.visible").click();
     });
     it("Verify if user can click on Roller Shades Icon to OFF roller shades", () => {
-      ToNavigateIoT.Rollershades().click();
+      ToNavigateIoT.Rollershades().should("be.visible").click();
+      ToNavigateIoT.offRollershades().should("contain", "OFF");
     });
     it("Verify if user can click on Roller Shades Icon to ON roller shades", () => {
-      ToNavigateIoT.Rollershades().click();
+      ToNavigateIoT.Rollershades().should("be.visible").click();
     });
     it("Verify if user can click on Wireless Audio Icon to OFF Wireless Audio", () => {
-      ToNavigateIoT.WirelessAudio().click();
+      ToNavigateIoT.WirelessAudio().should("be.visible").click();
+      ToNavigateIoT.offWireless().should("contain", "OFF");
     });
     it("Verify if user can click on Wireless Audio Icon to ON Wireless Audio", () => {
-      ToNavigateIoT.WirelessAudio().click();
+      ToNavigateIoT.WirelessAudio().should("be.visible").click();
     });
     it("Verify if user can click on Coffer Maker Icon to OFF Coffee Maker", () => {
-      ToNavigateIoT.CoffeeMaker().click();
+      ToNavigateIoT.CoffeeMaker().should("be.visible").click();
+      ToNavigateIoT.offCoffee().should("contain", "OFF");
     });
     it("Verify if user can click on Coffee Maker Icon to ON Coffee Maker", () => {
-      ToNavigateIoT.CoffeeMaker().click();
+      ToNavigateIoT.CoffeeMaker().should("be.visible").click();
     });
   });
-
-  // Temperature Section
 
   context("When user move to Temperature Card", () => {
     it("Verify if user is on Temperature Card", () => {
@@ -67,25 +70,25 @@ describe("Iot Dashboad", () => {
       });
     });
     it("Verify if user Power Off the Temperature", () => {
-      ToNavigateIoT.PowerOffButton().click();
+      ToNavigateIoT.PowerOffButton().should("be.visible").click();
     });
     it("Verify if user Power On the Temperature", () => {
-      ToNavigateIoT.PowerOffButton().click();
+      ToNavigateIoT.PowerOffButton().should("be.visible").click();
     });
     it("Veirfy if user select the Snow from Temperature Mode", () => {
-      ToNavigateIoT.TempModeSnow().click();
+      ToNavigateIoT.TempModeSnow().should("be.visible").click();
     });
     it("Veirfy if user select the Sunny from Temperature Mode", () => {
-      ToNavigateIoT.TempModeSunny().click();
+      ToNavigateIoT.TempModeSunny().should("be.visible").click();
     });
     it("Veirfy if user select the Flame from Temperature Mode", () => {
-      ToNavigateIoT.TempModeFlame().click();
+      ToNavigateIoT.TempModeFlame().should("be.visible").click();
     });
     it("Veirfy if user select the Loop from Temperature Mode", () => {
-      ToNavigateIoT.TempModeLoop().click();
+      ToNavigateIoT.TempModeLoop().should("be.visible").click();
     });
     it("Verify that the user can click on Humidity tab to see their data in temperature card", () => {
-      ToNavigateIoT.HumidTab().click();
+      ToNavigateIoT.HumidTab().should("be.visible").click();
     });
     it("Verify if user click on temperature dragger circle to see different celcius value", () => {
       ToNavigateIoT.HumidityDragger().then(($humiddragger) => {
@@ -115,26 +118,24 @@ describe("Iot Dashboad", () => {
       });
     });
     it("Verify if user Power Off the Humidity", () => {
-      ToNavigateIoT.PowerOffButton().eq(1).click();
+      ToNavigateIoT.PowerOffButton().eq(1).should("be.visible").click();
     });
     it("Verify if user Power On the Humidity", () => {
-      ToNavigateIoT.PowerOnButton().eq(1).click();
+      ToNavigateIoT.PowerOnButton().eq(1).should("be.visible").click();
     });
     it("Veirfy if user select the Snow from Hum Mode", () => {
-      ToNavigateIoT.HumidModeSnow().click();
+      ToNavigateIoT.HumidModeSnow().should("be.visible").click();
     });
     it("Veirfy if user select the Sunny from Temperature Mode", () => {
-      ToNavigateIoT.HumidModeSunny().click();
+      ToNavigateIoT.HumidModeSunny().should("be.visible").click();
     });
     it("Veirfy if user select the Flame from Temperature Mode", () => {
-      ToNavigateIoT.HumidModeFlame().click();
+      ToNavigateIoT.HumidModeFlame().should("be.visible").click();
     });
     it("Veirfy if user select the Loop from Temperature Mode", () => {
-      ToNavigateIoT.HumidModeLoop().click();
+      ToNavigateIoT.HumidModeLoop().should("be.visible").click();
     });
   });
-
-  // // // Electricity Consumption
 
   context("When user move to Electircity Consumption card", () => {
     it("Verify if user is on Electricity Consumption Card", () => {
@@ -143,12 +144,12 @@ describe("Iot Dashboad", () => {
       );
     });
     it("Verify if user select year to see Yearly electricity consumptions", () => {
-      ToNavigateIoT.ElectricYearlyTab1().click();
-      ToNavigateIoT.ElectricYearlyTab2().click();
-      ToNavigateIoT.ElectricYearlyTab3().click();
+      ToNavigateIoT.ElectricYearlyTab1().should("be.visible").click();
+      ToNavigateIoT.ElectricYearlyTab2().should("be.visible").click();
+      ToNavigateIoT.ElectricYearlyTab3().should("be.visible").click();
     });
     it("Verify user click on Electricity Consumption dropdown", () => {
-      ToNavigateIoT.ElectricDropdwonButton().click();
+      ToNavigateIoT.ElectricDropdwonButton().should("be.visible").click();
     });
     it("Verify if user select Month from dropdown list", () => {
       ToNavigateIoT.ElectricListDropdown().contains("month").click();
@@ -178,20 +179,18 @@ describe("Iot Dashboad", () => {
       });
     });
     it("Verify user click on Electricity Consumption dropdown", () => {
-      ToNavigateIoT.ElectricDropdwonButton().click();
+      ToNavigateIoT.ElectricDropdwonButton().should("be.visible").click();
     });
     it("Verify if user select Year from dropdown list", () => {
       ToNavigateIoT.ElectricListDropdown().contains("year").click();
     });
     it("Verify user click on Electricity Consumption dropdown", () => {
-      ToNavigateIoT.ElectricDropdwonButton().click();
+      ToNavigateIoT.ElectricDropdwonButton().should("be.visible").click();
     });
     it("Verify if user select Week from dropdown list", () => {
       ToNavigateIoT.ElectricListDropdown().contains("week").click();
     });
   });
-
-  // Contact Section
 
   context("When user move to Contact Card", () => {
     it("User is on contact card", () => {
@@ -210,8 +209,6 @@ describe("Iot Dashboad", () => {
         .click({ force: true });
     });
   });
-
-  // Traffic Consumption Section
 
   context("When user move to Traffic Consumption Card", () => {
     it("Verify if user is on Traffic Consumption Card", () => {
@@ -245,20 +242,18 @@ describe("Iot Dashboad", () => {
       });
     });
     it("Verify if user click on Traffic Consumption dropdown", () => {
-      ToNavigateIoT.TrafficConsumpDropdownButton().click();
+      ToNavigateIoT.TrafficConsumpDropdownButton().should("be.visible").click();
     });
     it("Verify if User select Year from dropdownlist", () => {
       ToNavigateIoT.TrafficConsumpListDropdown().contains("year").click();
     });
     it("Verify if user click on Traffic Consumption dropdown", () => {
-      ToNavigateIoT.TrafficConsumpDropdownButton().click();
+      ToNavigateIoT.TrafficConsumpDropdownButton().should("be.visible").click();
     });
     it("Verify if User select Month from dropdownlist", () => {
       ToNavigateIoT.TrafficConsumpListDropdown().contains("month").click();
     });
   });
-
-   //// My Playlist Section
 
   // Hanldle the uncaught exception
   Cypress.on("uncaught:exception", (err, runnable) => {
@@ -288,133 +283,125 @@ describe("Iot Dashboad", () => {
         .click();
     });
     it("Verify if user play the song", () => {
-      ToNavigateIoT.PlaySongButton().click();
+      ToNavigateIoT.PlaySongButton().should("be.visible").click();
     });
     it("Verify if user Pause the song", () => {
-      ToNavigateIoT.PauseSongButton().click();
+      ToNavigateIoT.PauseSongButton().should("be.visible").click();
     });
     it("Verify if user Shuffle the Playlist", () => {
-      ToNavigateIoT.ShuffleSongButton().click();
+      ToNavigateIoT.ShuffleSongButton().should("be.visible").click();
     });
     it("Verify if user play the Next song in the Playlist", () => {
-      ToNavigateIoT.ForwardSongButton().click();
+      ToNavigateIoT.ForwardSongButton().should("be.visible").click();
     });
     it("Verify if user Pause the song", () => {
-      ToNavigateIoT.PauseSongButton().click();
+      ToNavigateIoT.PauseSongButton().should("be.visible").click();
     });
     it("Verify if user play the Previous song in the Playlist", () => {
-      ToNavigateIoT.BackwardSongButton().click();
+      ToNavigateIoT.BackwardSongButton().should("be.visible").click();
     });
     it("Verify if user Pause the song", () => {
-      ToNavigateIoT.PauseSongButton().click();
+      ToNavigateIoT.PauseSongButton().should("be.visible").click();
     });
     it("Verify if user Repeat the current song in the Playlist", () => {
-      ToNavigateIoT.RepeatSongButton().click();
+      ToNavigateIoT.RepeatSongButton().should("be.visible").click();
     });
     it("Verify if user Mute the song volume", () => {
-      ToNavigateIoT.MuteVolSongButton().click();
+      ToNavigateIoT.MuteVolSongButton().should("be.visible").click();
     });
-   // it("Verify if user Full the song volume", () => {
-     // ToNavigateIoT.FullVolSongButton().click().wait(5000)
-  //});
-  it("Verify if user control the Volume Song Bar", () => {
-    ToNavigateIoT.VolumeSongBar()
-      .invoke("val", "80")
-      .click()
-      .invoke("val", "70")
-      .click()
-      .invoke("val", "60")
-      .click()
-      .invoke("val", "50")
-      .click()
-      .invoke("val", "40")
-      .click()
-      .invoke("val", "30")
-      .click()
-      .invoke("val", "20")
-      .click()
-      .invoke("val", "10")
-      .click()
-      .invoke("val", "0")
-      .click()
-      .invoke("val", "10")
-      .click()
-      .invoke("val", "20")
-      .click()
-      .invoke("val", "30")
-      .click()
-      .invoke("val", "40")
-      .click()
-      .invoke("val", "50")
-      .click()
-      .invoke("val", "60")
-      .click()
-      .invoke("val", "70")
-      .click();
-  });
-  });
 
-  // Security Cameras Section
+    it("Verify if user control the Volume Song Bar", () => {
+      ToNavigateIoT.VolumeSongBar()
+        .invoke("val", "80")
+        .click()
+        .invoke("val", "70")
+        .click()
+        .invoke("val", "60")
+        .click()
+        .invoke("val", "50")
+        .click()
+        .invoke("val", "40")
+        .click()
+        .invoke("val", "30")
+        .click()
+        .invoke("val", "20")
+        .click()
+        .invoke("val", "10")
+        .click()
+        .invoke("val", "0")
+        .click()
+        .invoke("val", "10")
+        .click()
+        .invoke("val", "20")
+        .click()
+        .invoke("val", "30")
+        .click()
+        .invoke("val", "40")
+        .click()
+        .invoke("val", "50")
+        .click()
+        .invoke("val", "60")
+        .click()
+        .invoke("val", "70")
+        .click();
+    });
+  });
 
   context("When user move to Security Camera Section", () => {
     it("Verify if user is on Security Camera Card", () => {
       ToNavigateIoT.SecurityCameraCard()
-      .scrollIntoView()
-      .contains("Security Cameras");
+        .scrollIntoView()
+        .contains("Security Cameras");
     });
     it("Verify if user click on Single Camera View", () => {
-      ToNavigateIoT.SecCamSingleVeiw().click();
+      ToNavigateIoT.SecCamSingleVeiw().should("be.visible").click();
     });
     it("Verify if user click on Grid Camera View", () => {
-      ToNavigateIoT.SecCamGridView().click();
+      ToNavigateIoT.SecCamGridView().should("be.visible").click();
     });
     it("Verify if user click on Camera # 1", () => {
-      ToNavigateIoT.SecurityCameraVeiw1().click();
+      ToNavigateIoT.SecurityCameraVeiw1().should("be.visible").click();
     });
     it("Verify if user click again on Grid Camera View", () => {
-      ToNavigateIoT.SecCamGridView().click();
+      ToNavigateIoT.SecCamGridView().should("be.visible").click();
     });
     it("Verify if user click on Camera # 2", () => {
-      ToNavigateIoT.SecurityCameraVeiw2().click();
+      ToNavigateIoT.SecurityCameraVeiw2().should("be.visible").click();
     });
     it("Verify if user click again on Grid Camera View", () => {
-      ToNavigateIoT.SecCamGridView().click();
+      ToNavigateIoT.SecCamGridView().should("be.visible").click();
     });
     it("Verify if user click on Camera # 3", () => {
-      ToNavigateIoT.SecurityCameraVeiw3().click();
+      ToNavigateIoT.SecurityCameraVeiw3().should("be.visible").click();
     });
     it("Verify if user click again on Grid Camera View", () => {
-      ToNavigateIoT.SecCamGridView().click();
+      ToNavigateIoT.SecCamGridView().should("be.visible").click();
     });
     it("Verify if user click on Camera # 4", () => {
-      ToNavigateIoT.SecurityCameraVeiw4().click();
+      ToNavigateIoT.SecurityCameraVeiw4().should("be.visible").click();
     });
     it("Verify if user click again on Grid Camera View", () => {
-      ToNavigateIoT.SecCamGridView().click();
+      ToNavigateIoT.SecCamGridView().should("be.visible").click();
     });
 
-  // Room Management Section
-
-  context("When user move to Room Management Section", () => {
-    it("Verify if user is on Room Mangement Card", () => {
-      ToNavigateIoT.RoomManagementCard()
-        .scrollIntoView()
-        .should("contain", "Room Management");
-    });
-    it("Verify if user Select Bedroom from Room Mangement Card", () => {
-      ToNavigateIoT.BedroomSelect().click();
-    });
-    it("Verify if user Select LivingRoom from Room Mangement Card", () => {
-      ToNavigateIoT.LivingRoomSelect().click();
-    });
-    it("Verify if user Select Kitten from Room Mangement Card", () => {
-      ToNavigateIoT.KittenSelect().click();
-    });
-    it("Verify if user Select Hallway from Room Mangement Card", () => {
-      ToNavigateIoT.HallwaySelect().click();
+    context("When user move to Room Management Section", () => {
+      it("Verify if user is on Room Mangement Card", () => {
+        ToNavigateIoT.RoomManagementCard()
+          .scrollIntoView()
+          .should("contain", "Room Management");
+      });
+      it("Verify if user Select Bedroom from Room Mangement Card", () => {
+        ToNavigateIoT.BedroomSelect().should("be.visible").click();
+      });
+      it("Verify if user Select LivingRoom from Room Mangement Card", () => {
+        ToNavigateIoT.LivingRoomSelect().should("be.visible").click();
+      });
+      it("Verify if user Select Kitten from Room Mangement Card", () => {
+        ToNavigateIoT.KittenSelect().should("be.visible").click();
+      });
+      it("Verify if user Select Hallway from Room Mangement Card", () => {
+        ToNavigateIoT.HallwaySelect().should("be.visible").click();
+      });
     });
   });
-
- 
-});
 });

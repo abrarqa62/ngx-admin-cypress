@@ -7,14 +7,26 @@ export class IotDashboard {
   LightBulb() {
     return cy.get(".nb-lightbulb");
   }
+  offBulb() {
+    return cy.xpath("//ngx-status-card[@ng-reflect-title='Light']//div[@class='status paragraph-2'][normalize-space()='OFF']");
+  }
   Rollershades() {
     return cy.get(".nb-roller-shades");
+  }
+  offRollershades(){
+    return cy.xpath("//ngx-status-card[@ng-reflect-title='Roller Shades']//div[@class='status paragraph-2'][normalize-space()='OFF']");
   }
   WirelessAudio() {
     return cy.get(".nb-audio");
   }
+  offWireless(){
+    return cy.xpath("//ngx-status-card[@ng-reflect-title='Wireless Audio']//div[@class='status paragraph-2'][normalize-space()='OFF']");
+  }
   CoffeeMaker() {
     return cy.get(".nb-coffee-maker");
+  }
+  offCoffee(){
+    return cy.xpath("//ngx-status-card[@ng-reflect-title='Coffee Maker']//div[@class='status paragraph-2'][normalize-space()='OFF']");
   }
 
   // Temperature Section
