@@ -17,7 +17,7 @@ import { TrafficChartData } from '../../../@core/data/traffic-chart';
         </nb-select>
       </nb-card-header>
 
-      <ngx-traffic-chart [points]="trafficChartPoints"></ngx-traffic-chart>
+      <ngx-traffic-chart data-test-id="TrafficConsumpChart" [points]="trafficChartPoints"></ngx-traffic-chart>
     </nb-card>
   `,
 })
