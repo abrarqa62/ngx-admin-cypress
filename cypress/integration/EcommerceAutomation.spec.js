@@ -1,4 +1,4 @@
-import { NavigateTo } from "../support/page_objects/PageObjectsEcommerce";
+import { NavigateTo } from "../page_objects/PageObjectsEcommerce";
 
 describe("Ecommerce Page", () => {
   before("Run the Website", () => {
