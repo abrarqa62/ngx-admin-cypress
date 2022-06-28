@@ -1,13 +1,14 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@2
+  cypress: cypress-io/cypress@
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
-          start: npm start
-          wait-on: 'http://localhost:4200'
+          requires:
+            - cypress/install
           record: true
-          store_artifacts: true
           parallel: true
           parallelism: 2
+          group: 2 machines
