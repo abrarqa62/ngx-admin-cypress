@@ -4,13 +4,11 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
       - cypress/run:
           requires:
-            - cypress/install
           start: npm start
           wait-on: 'http://localhost:4200'
           record: true
           parallel: true
-          parallelism: 2
-          group: 2 machines
+          parallelism: 4
+          group: 4 machines
