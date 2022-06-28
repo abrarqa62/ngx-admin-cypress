@@ -9,3 +9,5 @@ workflows:
           wait-on: 'http://localhost:4200'
           record: true
           store_artifacts: true
+          parallel: true
+          parallelism: 2
