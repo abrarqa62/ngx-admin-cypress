@@ -5,7 +5,6 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          requires:
           start: npm start
           wait-on: 'http://localhost:4200'
           record: true
