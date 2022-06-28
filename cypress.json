@@ -4,6 +4,10 @@
   "viewportWidth": 1920,
   "chromeWebSecurity": false,
   "scrollBehavior": false,
-  "projectId": "1ws6re"
+  "projectId": "1ws6re",
+  "env": {
+    "CYPRESS_RECORD_KEY": "cypress run --record --key e6a4db76-364d-49be-a151-08a7ebe198f2"
+    
+  }
 }
 
